@@ -98,7 +98,7 @@ const Discover = () => {
                     )}
                 </select>
                 <h4 className='font-bold text-3xl text-white text-left mb-4 mt-4'>
-                Enter The Song
+                Search the song recommendation
                 </h4>
   <Searchbar/>
   <div className='flex flex-wrap sm:justify-start justify-center gap-8'>

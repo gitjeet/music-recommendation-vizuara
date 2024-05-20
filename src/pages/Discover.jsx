@@ -33,7 +33,7 @@ const Discover = () => {
 
     if (error) return <Error />;
   
-
+    const songs = data?.tracks?.hits.map((song) => song.track);
     const genreTitle = "Pop";
     return(
         <div className={styles.container}>
@@ -101,18 +101,18 @@ const Discover = () => {
                 Search the song recommendation
                 </h4>
   <Searchbar/>
-  <div className='flex flex-wrap sm:justify-start justify-center gap-8'>
-  {data?.slice(3, 6).map((song, i) => (
-    <SongCard
-      key={song.key}
-      song={song}
-      isPlaying={isPlaying}
-      activeSong={activeSong}
-      data={data}
-      i={i}
-    />
-  ))}
-</div>
+  <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+        {songs.map((song, i) => (
+          <SongCard
+            key={song.key}
+            song={song}
+            isPlaying={isPlaying}
+            activeSong={activeSong}
+            data={data}
+            i={i}
+          />
+        ))}
+      </div>
 
         </div>
     )
